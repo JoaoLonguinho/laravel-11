@@ -18,6 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('admin/usuarios', [UserController::class, "index"]); // Parametros : nome da controller e nome do metodo, que chama a listagem de usuários (pode ser qualquer nome)
-Route::get('admin/usuarios/{id}', [UserController::class, "show"]); 
+Route::get('admin/usuarios/{user}', [UserController::class, "show"]); 
