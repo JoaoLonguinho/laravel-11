@@ -12,4 +12,10 @@ class UserController extends Controller
             "nome" => "Joao"
         ];
     }
-}
+
+    public function show($id){
+        // dd('x', $id); //dump - die 
+
+        return $id;
+    }
+ }

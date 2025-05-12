@@ -20,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('admin/usuarios', [UserController::class, "index"]); // Parametros : nome da controller e nome do metodo, que chama a listagem de usuários (pode ser qualquer nome)
+Route::get('admin/usuarios/{id}', [UserController::class, "show"]); 
