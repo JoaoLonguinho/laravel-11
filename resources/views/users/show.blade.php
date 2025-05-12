@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de usuários</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    {{ $greeting }} <!-- Váriavel que veio da controller -->
-    {{ dd($users) }}
+    <h1>Mostrar usuário: {{ $user->name }}</h1>
+    {{ dd($user) }}
 </body>
 </html>
