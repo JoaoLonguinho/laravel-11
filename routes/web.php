@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin/usuarios', function(){
-    // json
-    return [
-        'id' => 1,
-        'name' => "João"
-    ];
-});
+Route::get('admin/usuarios', [UserController::class, "index"]); // Parametros : nome da controller e nome do metodo, que chama a listagem de usuários (pode ser qualquer nome)
