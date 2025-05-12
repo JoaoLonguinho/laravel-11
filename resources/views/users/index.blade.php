@@ -7,5 +7,6 @@
 </head>
 <body>
     <h1>Hello World!</h1>
+    {{ $greeting }} <!-- Váriavel que veio da controller -->
 </body>
 </html>

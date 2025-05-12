@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 { 
     public function index(){
-        return view('users.index'); //O ponto é a / do caminho
+        // Regras de negócio
+        // Variáveis e conteúdos que vão para a view
+        return view('users/index', ['greeting' => 'Hello World!']); //O ponto é a / do caminho
         // return [
         //     "id" => 0,
         //     "nome" => "Joao"
