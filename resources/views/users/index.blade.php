@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+<!-- o Section title não funciona com o dd -->
+@section('title')
+    Lista de usuários 
+@endsection
+
+
 @section('main')
     <h1>Hello World!</h1>
     {{ $greeting }} <!-- Váriavel que veio da controller -->
@@ -16,5 +22,4 @@
     @endforeach
 
         {{ $name }}
-        {{ dd($users) }}
 @endsection
