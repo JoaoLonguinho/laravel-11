@@ -7,7 +7,7 @@
 
 
 @section('main')
-    <h1>Hello World!</h1>
+    <h1 class="title">Hello World!</h1>
     {{ $greeting }} <!-- Váriavel que veio da controller -->
 
     @php #Blocos php
