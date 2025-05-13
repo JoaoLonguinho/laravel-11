@@ -21,5 +21,7 @@
         </div>
     @endforeach
 
+    
         {{ $name }}
+    @vite('resources/js/app.js')
 @endsection
