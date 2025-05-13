@@ -2,7 +2,7 @@
 
 <!-- o Section title não funciona com o dd -->
 @section('title')
-    Lista de usuários 
+    Lista de usuários
 @endsection
 
 
@@ -16,12 +16,13 @@
 
     @endphp
     @foreach($users as $user)
-            <div>
-            Nome: {{$user->name}} / Email: {{ $user->email }}
-        </div>
-    @endforeach
+        <div>
+                Nome: {{$user->name}} / Email: {{ $user->email }}
+            </div>
+            @endforeach
+            <img src="{{ Vite::asset('resources/images/default.jpg') }}">
 
-    
-        {{ $name }}
-    @vite('resources/js/app.js')
+
+            {{ $name }}
+        @vite('resources/js/app.js')
 @endsection
