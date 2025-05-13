@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 // verbo HTTP
 Route::get('/', function () {
+
+    $post = new Post();
+
+    dd($post);
     return view('welcome');
+
+
 });
 Route::get('admin/usuarios', [UserController::class, "index"]); // Parametros : nome da controller e nome do metodo, que chama a listagem de usuários (pode ser qualquer nome)
 Route::get('admin/usuarios/{user}', [UserController::class, "show"]); 
