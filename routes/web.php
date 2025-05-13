@@ -20,6 +20,10 @@ Route::get('/', function () {
 
     $post = new Post();
 
+    $post->title = "meu primeiro post";
+    $post->body = "Texto do body";
+    $post->save();
+
     dd($post);
     return view('welcome');
 
