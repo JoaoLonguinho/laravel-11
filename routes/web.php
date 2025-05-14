@@ -29,14 +29,15 @@ Route::get('/', function () {
     // $post->title = "titulo atualizado";
     // $post->body = "meu novo text";
     // $post->save(); #comando necessário para atualizar no banco
-    $input = [
-        'title' => 'texto via array',
-        'body' => 'texto do body via array'
-    ];
+    // $input = [
+    //     'title' => 'texto via array',
+    //     'body' => 'texto do body via array'
+    // ];
 
+    // $post = Post::find(1);
+    // $post->fill($input);
     $post = Post::find(1);
-    $post->fill($input);
-    $post->save();
+    $post->delete();
 
     dd($post);
     return view('welcome');
