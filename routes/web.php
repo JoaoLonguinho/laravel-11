@@ -18,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 // verbo HTTP
 Route::get('/', function () {
 
-    $post = Post::find(1);
-
+    // $post = Post::find(1); #Busca pelo id
+    $post = Post::where("title", "meu primeiro post")->first(); #busca utilizando where ->first tras o primeiro que bater com a condição
+    // Para adicionar 'and' basta incluir ->where e para adicionar o 'or' basta adicionar o ->orWhere - qualquer coisa, verificar na documentação
     dd($post);
     return view('welcome');
 
