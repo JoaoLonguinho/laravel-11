@@ -18,11 +18,7 @@ use Illuminate\Support\Facades\Route;
 // verbo HTTP
 Route::get('/', function () {
 
-    $post = new Post();
-
-    $post->title = "meu primeiro post";
-    $post->body = "Texto do body";
-    $post->save();
+    $post = Post::find(1);
 
     dd($post);
     return view('welcome');
