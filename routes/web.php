@@ -24,11 +24,20 @@ Route::get('/', function () {
     // busca por coleção de model:
     // $post = Post::all();
     // $post = Post::where('title', 'LIKE', '%post%')->get(); traz a coleção, utilizando condição
-    // atualizando dados no banco:
+    // // atualizando dados no banco:
+    // $post = Post::find(1);
+    // $post->title = "titulo atualizado";
+    // $post->body = "meu novo text";
+    // $post->save(); #comando necessário para atualizar no banco
+    $input = [
+        'title' => 'texto via array',
+        'body' => 'texto do body via array'
+    ];
+
     $post = Post::find(1);
-    $post->title = "titulo atualizado";
-    $post->body = "meu novo text";
-    $post->save(); #comando necessário para atualizar no banco
+    $post->fill($input);
+    $post->save();
+
     dd($post);
     return view('welcome');
 
