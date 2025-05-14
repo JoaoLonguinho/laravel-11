@@ -27,8 +27,9 @@ Route::get('/', function () {
     // atualizando dados no banco:
     $post = Post::find(1);
     $post->title = "titulo atualizado";
-    dd($post);
+    $post->body = "meu novo text";
     $post->save(); #comando necessário para atualizar no banco
+    dd($post);
     return view('welcome');
 
 
