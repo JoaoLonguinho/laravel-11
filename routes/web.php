@@ -19,8 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 
     // $post = Post::find(1); #Busca pelo id
-    $post = Post::where("title", "meu primeiro post")->first(); #busca utilizando where ->first tras o primeiro que bater com a condição
+    // $post = Post::where("title", "meu primeiro post")->first(); #busca utilizando where ->first tras o primeiro que bater com a condição
     // Para adicionar 'and' basta incluir ->where e para adicionar o 'or' basta adicionar o ->orWhere - qualquer coisa, verificar na documentação
+    // busca por coleção de model:
+    $post = Post::all();
+    // $post = Post::where('title', 'LIKE', '%post%')->get(); traz a coleção, utilizando condição
     dd($post);
     return view('welcome');
 
