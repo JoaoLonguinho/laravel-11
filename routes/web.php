@@ -22,9 +22,13 @@ Route::get('/', function () {
     // $post = Post::where("title", "meu primeiro post")->first(); #busca utilizando where ->first tras o primeiro que bater com a condição
     // Para adicionar 'and' basta incluir ->where e para adicionar o 'or' basta adicionar o ->orWhere - qualquer coisa, verificar na documentação
     // busca por coleção de model:
-    $post = Post::all();
+    // $post = Post::all();
     // $post = Post::where('title', 'LIKE', '%post%')->get(); traz a coleção, utilizando condição
+    // atualizando dados no banco:
+    $post = Post::find(1);
+    $post->title = "titulo atualizado";
     dd($post);
+    $post->save(); #comando necessário para atualizar no banco
     return view('welcome');
 
 
