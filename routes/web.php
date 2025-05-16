@@ -42,17 +42,20 @@ Route::get('/', function () {
 
     // dd($post);
 
-
-    $user = User::find(2);
+    $user = User::with('posts')->find(3);
     // $user->profile()->create([
     //     "type" => "PJ",
     //     "document_number" => "19452956-9"
     // ]);
 
-    dd($user->profile->type); #carrega relacao, com dados no banco
-    
-    return view('welcome');
+    $user->posts()->create([
+        'title' => 'Meu primeiro post',
+        'body' => 'Obrigado por ler meu primeiro post'
+    ]);
 
+    dd($user); #carrega relacao, com dados no banco
+
+    return view('welcome');
 
 });
 Route::get('admin/usuarios', [UserController::class, "index"]); // Parametros : nome da controller e nome do metodo, que chama a listagem de usuários (pode ser qualquer nome)
