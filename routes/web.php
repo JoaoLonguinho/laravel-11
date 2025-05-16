@@ -53,7 +53,8 @@ Route::get('/', function () {
     //     'body' => 'Obrigado por ler meu primeiro post'
     // ]);
 
-    $user = Role::all();
+    $user = User::find(1);
+    $user->roles()->attach(1);
     dd($user); #carrega relacao, com dados no banco
 
     return view('welcome');
