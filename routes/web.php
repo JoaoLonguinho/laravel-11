@@ -36,10 +36,12 @@ Route::get('/', function () {
 
     // $post = Post::find(1);
     // $post->fill($input);
-    $post = Post::find(1);
-    $post->delete();
+    // $post = Post::find(1);
+    // $post->delete();
 
-    dd($post);
+    // dd($post);
+
+    
     return view('welcome');
 
 
