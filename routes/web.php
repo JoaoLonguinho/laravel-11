@@ -41,6 +41,8 @@ Route::get('/', function () {
 
     // dd($post);
 
+
+    
     
     return view('welcome');
 
