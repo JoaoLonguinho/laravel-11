@@ -54,7 +54,9 @@ Route::get('/', function () {
     // ]);
 
     $user = User::with('roles')->find(1);
-    // $user->roles()->attach(1);
+    // $user->roles()->attach(1); # adicionando role
+    // $user->roles()->detach(1); # removendo role
+
     dd($user); #carrega relacao, com dados no banco
 
     return view('welcome');
