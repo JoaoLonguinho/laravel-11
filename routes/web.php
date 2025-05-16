@@ -44,12 +44,12 @@ Route::get('/', function () {
 
 
     $user = User::find(2);
-    $user->profile()->create([
-        "type" => "PJ",
-        "document_number" => "19452956-9"
-    ]);
+    // $user->profile()->create([
+    //     "type" => "PJ",
+    //     "document_number" => "19452956-9"
+    // ]);
 
-    dd($user->profile); #carrega relacao, com dados no banco
+    dd($user->profile->type); #carrega relacao, com dados no banco
     
     return view('welcome');
 
