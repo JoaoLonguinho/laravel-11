@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
 
+    protected $with = ['profile']; # carrega automaticamente junto com a relação
     public function profile()
     {
         return $this->hasOne(Profile::class);
