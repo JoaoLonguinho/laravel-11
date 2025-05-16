@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,7 +43,9 @@ Route::get('/', function () {
     // dd($post);
 
 
-    
+    $user = User::find(1);
+
+    dd($user->profile); #carrega relacao, mas esta vazia
     
     return view('welcome');
 
