@@ -45,7 +45,7 @@ Route::get('/', function () {
 
     $user = User::find(1);
 
-    dd($user->profile); #carrega relacao, mas esta vazia
+    dd($user->profile); #carrega relacao, com dados no banco
     
     return view('welcome');
 
