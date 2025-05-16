@@ -43,7 +43,11 @@ Route::get('/', function () {
     // dd($post);
 
 
-    $user = User::find(1);
+    $user = User::find(2);
+    $user->profile()->create([
+        "type" => "PJ",
+        "document_number" => "19452956-9"
+    ]);
 
     dd($user->profile); #carrega relacao, com dados no banco
     
