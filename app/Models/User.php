@@ -21,10 +21,13 @@ class User extends Authenticatable
     // protected $with = ['profile']; # carrega automaticamente junto com a relação
     public function profile()
     {
-        return $this->hasOne(Profile::class);
+        return $this->hasOne(Profile::class); # 1-1
     }
     public function posts(){
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Post::class); # 1-n
+    }
+    public function roles(){ 
+        return $this->belongsToMany(Role::class); #n-n
     }
     protected $fillable = [
         'name',

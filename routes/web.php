@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\UserController;
 use App\Models\Post;
-use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -54,8 +53,8 @@ Route::get('/', function () {
     //     'body' => 'Obrigado por ler meu primeiro post'
     // ]);
 
-    $roles = Role::all();
-    dd($roles); #carrega relacao, com dados no banco
+    $user = Role::all();
+    dd($user); #carrega relacao, com dados no banco
 
     return view('welcome');
 
