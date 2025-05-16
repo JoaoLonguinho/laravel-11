@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Models\Post;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -42,18 +43,19 @@ Route::get('/', function () {
 
     // dd($post);
 
-    $user = User::with('posts')->find(3);
-    // $user->profile()->create([
-    //     "type" => "PJ",
-    //     "document_number" => "19452956-9"
+    // $user = User::with('posts')->find(3);
+    // // $user->profile()->create([
+    // //     "type" => "PJ",
+    // //     "document_number" => "19452956-9"
+    // // ]);
+
+    // $user->posts()->create([
+    //     'title' => 'Meu primeiro post',
+    //     'body' => 'Obrigado por ler meu primeiro post'
     // ]);
 
-    $user->posts()->create([
-        'title' => 'Meu primeiro post',
-        'body' => 'Obrigado por ler meu primeiro post'
-    ]);
-
-    dd($user); #carrega relacao, com dados no banco
+    $roles = Role::all();
+    dd($roles); #carrega relacao, com dados no banco
 
     return view('welcome');
 
