@@ -19,46 +19,6 @@ use Illuminate\Support\Facades\Route;
 // verbo HTTP
 Route::get('/', function () {
 
-    // $post = Post::find(1); #Busca pelo id
-    // $post = Post::where("title", "meu primeiro post")->first(); #busca utilizando where ->first tras o primeiro que bater com a condição
-    // Para adicionar 'and' basta incluir ->where e para adicionar o 'or' basta adicionar o ->orWhere - qualquer coisa, verificar na documentação
-    // busca por coleção de model:
-    // $post = Post::all();
-    // $post = Post::where('title', 'LIKE', '%post%')->get(); traz a coleção, utilizando condição
-    // // atualizando dados no banco:
-    // $post = Post::find(1);
-    // $post->title = "titulo atualizado";
-    // $post->body = "meu novo text";
-    // $post->save(); #comando necessário para atualizar no banco
-    // $input = [
-    //     'title' => 'texto via array',
-    //     'body' => 'texto do body via array'
-    // ];
-
-    // $post = Post::find(1);
-    // $post->fill($input);
-    // $post = Post::find(1);
-    // $post->delete();
-
-    // dd($post);
-
-    // $user = User::with('posts')->find(3);
-    // // $user->profile()->create([
-    // //     "type" => "PJ",
-    // //     "document_number" => "19452956-9"
-    // // ]);
-
-    // $user->posts()->create([
-    //     'title' => 'Meu primeiro post',
-    //     'body' => 'Obrigado por ler meu primeiro post'
-    // ]);
-
-    $user = User::with('roles')->find(1);
-    // $user->roles()->attach(1); # adicionando role
-    // $user->roles()->detach(1); # removendo role
-
-    dd($user); #carrega relacao, com dados no banco
-
     return view('welcome');
 
 });
