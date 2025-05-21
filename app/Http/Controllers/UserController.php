@@ -20,8 +20,8 @@ class UserController extends Controller
     public function create(){
         return view('users.create');
     }
-    public function store(){
-        dd('store');
+    public function store(Request $request){
+        dd($request->all());
     }
     public function show(User $user)
     {
