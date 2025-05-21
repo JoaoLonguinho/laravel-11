@@ -30,5 +30,5 @@ Route::get(
 Route::post(
     'admin/usuarios/cadastrar', 
     [UserController::class, "store"]
-)->name('user.store');
+)->name('user.store'); #adicionando nome a rota
 Route::get('admin/usuarios/{user}', [UserController::class, "show"]); 

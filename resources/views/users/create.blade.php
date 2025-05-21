@@ -7,7 +7,7 @@
 
 @section('main')
     <h1>Cadastro de usuários</h1>
-    <form action="/admin/usuarios/cadastrar" method="POST">
+    <form action="{{ route('user.store') }}" method="POST">
         @csrf
         <div>
             <label for="name">Nome:</label>
