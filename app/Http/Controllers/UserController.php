@@ -21,6 +21,11 @@ class UserController extends Controller
         return view('users.create');
     }
     public function store(Request $request){
+        $input = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:3'
+        ]);
         dd($request->all());
     }
     public function show(User $user)
