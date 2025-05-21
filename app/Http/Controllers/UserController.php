@@ -26,7 +26,9 @@ class UserController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:3'
         ]);
-        dd($request->all());
+        User::create($input);
+        // dd($request->all());
+        return redirect()->back();
     }
     public function show(User $user)
     {
