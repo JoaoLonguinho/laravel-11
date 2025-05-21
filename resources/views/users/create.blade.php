@@ -7,7 +7,8 @@
 
 @section('main')
     <h1>Cadastro de usuários</h1>
-    <form action="{{ route('user.store') }}" method="POST">
+    <a href="{{ route('users.index') }}">Lista de usuarios</a>
+    <form action="{{ route('users.store') }}" method="POST">
         @csrf
         <div>
             <label for="name">Nome:</label>
