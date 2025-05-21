@@ -17,7 +17,12 @@ class UserController extends Controller
             'users' => $users
         ]); //O ponto é a / do caminho
     }
-
+    public function create(){
+        return view('users.create');
+    }
+    public function store(){
+        dd('store');
+    }
     public function show(User $user)
     {
         // dd('x', $id); //dump - die 
