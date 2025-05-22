@@ -8,7 +8,7 @@
 @section('main')
     <h1>Cadastro de usuários</h1>
     <!-- <a href="{{ route('users.index') }}">Lista de usuarios</a> -->
-    <form action="{{ route('users.store') }}" method="POST">
+    <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         {{ $errors->any() }}
@@ -26,6 +26,10 @@
         <div>
             <label for="email">Email:</label>
             <input type="text" name="email" id="email" value="{{ old('email') }}">
+        </div>
+        <div>
+            <label for="avatar">Avatar:</label>
+            <input type="file" name="avatar" id="avatar">
         </div>
         <div>
             <label for="password">Senha:</label>

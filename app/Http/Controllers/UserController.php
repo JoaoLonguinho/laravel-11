@@ -24,10 +24,15 @@ class UserController extends Controller
         $input = $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:3'
+            'password' => 'required|min:3',
+            'avatar' => 'file'
         ]);
-        User::create($input);
+        // User::create($input);
         // dd($request->all());
+        if(!empty($input["avatar"]) && $input["avatar"]->isValid()){
+            $input["avatar"]->store('avatars');
+        }
+        
         return redirect()->back();
     }
     public function show(User $user)
