@@ -9,7 +9,8 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(2); #paginação
+
         // Regras de negócio
         // Variáveis e conteúdos que vão para a view
         return view('users/index', [

@@ -16,13 +16,12 @@
 
     @endphp
     @foreach($users as $user)
-        <div>
+            <div>
                 Nome: {{$user->name}} / Email: {{ $user->email }}
             </div>
-            @endforeach
+    @endforeach
             <img src="{{ Vite::asset('resources/images/default.jpg') }}">
-
-
             {{ $name }}
+            {{ $users->links() }} <!-- cria os números / next e previous de paginação -->
         @vite('resources/js/app.js')
 @endsection
